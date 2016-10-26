@@ -8,7 +8,7 @@ return [
  * Time: 22:47
  */
     'facebook' => [
-        'url'  => 'https://www.facebook.com/profile.php?id=100011357444248',
+        'url'  => 'https://www.facebook.com/profile.php?id=100011389336704',
         'fa'   => 'fa fa-facebook fa-fw',
     ],
     'twitter'  => [
@@ -16,7 +16,7 @@ return [
         'fa'   => 'fa fa-twitter fa-fw',
     ],
     'weibo'    => [
-        'url'  => 'http://weibo.com/u/2363498941',
+        'url'  => 'http://weibo.com/u/5181082806',
         'fa'   => 'fa fa-weibo fa-fw',
     ],
     'github'  => [
