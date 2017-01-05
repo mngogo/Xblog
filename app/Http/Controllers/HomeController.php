@@ -27,8 +27,17 @@ class HomeController extends Controller
 
     public function search(Request $request)
     {
-        $key = $request->get('q');
-        $posts = Post::where('title', 'like', "%$key%")->get();
+        $key = trim($request->get('q'));
+        if ($key == '')
+            return back()->withErrors("请输入关键字");
+
+        $key = "%$key%";
+        $posts = Post::where('title', 'like', $key)
+            ->orWhere('description', 'like', $key)
+            ->with(['tags', 'category'])
+            ->withCount('comments')
+            ->orderBy('view_count', 'desc')
+            ->get();
         return view('search', compact('posts'));
     }
 
